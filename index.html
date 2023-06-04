@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bus match</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="root">
+    <header>
+        <div id="difficulty" class="flex align-center">
+            Difficulty:
+            <button class="difficulty-button" data-difficulty="easy">Easy</button>
+            <button class="difficulty-button" data-difficulty="medium">Medium</button>
+            <button class="difficulty-button" data-difficulty="hard">Hard</button>
+        </div>
+        <div class="flex align-center">
+            No. of turns: <div id="turns">0</div>
+        </div>
+        <div>
+            <button id="restart">Restart</button>
+            <button>
+                Leaderboard
+            </button>
+        </div>
+    </header>
+    <div id="game" class="medium"></div>
+</div>
+
+<script src="index.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "bus-match",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:bengawalk/bus-match.git",
+  "author": "Deep <deep@euclidxr.com>",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "sass": "^1.62.1",
+    "vite": "^4.3.9"
+  },
+  "scripts": {
+    "start": "vite . --host 0.0.0.0 --port 3000",
+    "build": "vite build"
+  }
+}
