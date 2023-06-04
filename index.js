@@ -4,9 +4,9 @@ import _ from "lodash";
 const MAX_NO_OF_CARDS = 30;
 const ALL_CARDS = _.range(1, MAX_NO_OF_CARDS + 1);
 const DIFFICULTIES = {
-  EASY: "EASY",
-  MEDIUM: "MEDIUM",
-  HARD: "HARD",
+  EASY: "easy",
+  MEDIUM: "medium",
+  HARD: "hard",
 };
 const CARD_COUNTS_FOR_DIFFICULTY = {
   [DIFFICULTIES.EASY]: 12,
