@@ -89,10 +89,10 @@ const restartGame = () => {
   turnsDom.innerHTML = "0";
   cardsContainer.innerHTML = _.join(_.map(newCards, c => `<div class="memory-card" data-framework="${c}">
       <div class="front-face">
-        <img src="/images/${c}.webp" alt="" />
+        <img src="/images/${c}_1.webp" alt="" />
       </div>
       <div class="back-face">
-        <img src="images/flower.webp" alt="" />
+        <img src="images/flower_1.webp" alt="" />
       </div>
     </div>`), "");
   const cards = document.querySelectorAll('.memory-card');
