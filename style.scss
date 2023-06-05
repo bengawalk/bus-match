@@ -1,7 +1,21 @@
+:root {
+  --color-primary: #025DFF;
+  --color-light-bg: #222A3F;
+}
+
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
+}
+
+.mr-2 {
+  margin-right: 8px;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
 }
 
 html {
@@ -22,6 +36,34 @@ body {
   align-items: center;
 }
 
+.btn {
+  border: 0;
+  border-radius: 4px;
+  padding: 4px 10px;
+  &.primary {
+    background-color: var(--color-primary);
+    color: #ffffff;
+  }
+}
+
+.btn-group {
+  background-color: var(--color-light-bg);
+  display: inline-flex;
+  padding: 2px;
+  border-radius: 4px;
+  button {
+    background-color: transparent;
+    border: 0;
+    border-radius: 4px;
+    padding: 4px 10px;
+    color: var(--color-primary);
+    &.selected {
+      background-color: var(--color-primary);
+      color: #ffffff;
+    }
+  }
+}
+
 header {
   height: 50px;
   background-color: #222222;
@@ -30,6 +72,7 @@ header {
   justify-content: space-between;
   padding: 0 20px;
   flex-grow: 0;
+  font-size: 0.8rem;
 }
 
 #root {
@@ -47,10 +90,11 @@ header {
   flex-shrink: 1;
   margin: auto;
   display: grid;
-  padding: 10px;
+  background-color: #111111;
+  padding: 20px;
 
-  column-gap: 10px;
-  row-gap: 10px;
+  column-gap: 20px;
+  row-gap: 20px;
 
   perspective: 1000px;
 
@@ -72,18 +116,29 @@ header {
 
 .memory-card {
   position: relative;
-  border-radius: 4px;
+  border-radius: 8px;
   transform: scale(1);
+  padding: 5px;
   transform-style: preserve-3d;
   transition: transform .5s;
+  background-color: #222222;
   box-shadow: 0 0 5px rgba(0,0,0,.3);
+  cursor: pointer;
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    aspect-ratio: 5/3;
+  }
 
   &.flip {
     transform: rotateY(180deg);
+    cursor: not-allowed;
   }
 
   &.disabled {
     transform: rotateY(180deg);
+    cursor: not-allowed;
   }
 
   &:active {
@@ -94,9 +149,13 @@ header {
 
 .front-face,
 .back-face {
-  width: 100%;
-  height: 100%;
   position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;justify-content: center;
   backface-visibility: hidden;
 }
 

@@ -23,7 +23,7 @@ let unflipInterval = null;
 let turns = 0;
 let lockBoard = false;
 let firstCard, secondCard;
-let difficulty  = DIFFICULTIES.MEDIUM;
+let difficulty  = DIFFICULTIES.EASY;
 
 const getCards = (count) => {
   const subset = _.slice(_.sortBy(ALL_CARDS, Math.random), 0, count);
@@ -88,8 +88,12 @@ const restartGame = () => {
   turns = 0;
   turnsDom.innerHTML = "0";
   cardsContainer.innerHTML = _.join(_.map(newCards, c => `<div class="memory-card" data-framework="${c}">
-      <img class="front-face" src="/images/${c}.webp" alt="" />
-      <img class="back-face" src="images/flower.webp" alt="" />
+      <div class="front-face">
+        <img src="/images/${c}.webp" alt="" />
+      </div>
+      <div class="back-face">
+        <img src="images/flower.webp" alt="" />
+      </div>
     </div>`), "");
   const cards = document.querySelectorAll('.memory-card');
   cards.forEach(card => card.addEventListener('click', onFlipClick));
@@ -98,7 +102,10 @@ const restartGame = () => {
 function changeDifficulty() {
   difficulty = this.dataset.difficulty;
   cardsContainer.className = difficulty;
+  difficultiesDomButtons.forEach(b => { b.classList.remove("selected"); })
+  document.querySelector(`.difficulty-button[data-difficulty="${difficulty}"]`).classList.add("selected");
   restartGame();
+
 }
 
 difficultiesDomButtons.forEach(card => card.addEventListener('click', changeDifficulty));
